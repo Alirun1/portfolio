@@ -1,0 +1,33 @@
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .border-red-500 {
+    border-color: #f56565; /* Tailwind CSS class for red border */
+  }
+
+  .details {
+    display: none;
+  }
+  
+  .progress-bar {
+    background-color: #f3f3f3;
+    height: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .progress {
+    background-color: #4caf50;
+    height: 100%;
+    border-radius: 5px;
+  }
+  
+  
