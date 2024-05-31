@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<style>
+  .hidden {
+    display: none;
+  }
+  .fade-in-on-scroll {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+  }
+  .fade-in {
+    opacity: 1;
+  }
+  .progress-bar {
+    display: flex;
+    align-items: center;
+  }
+  .progress-circle {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 50%;
+    background-color: #d1d5db;
+    transition: background-color 0.5s ease-in;
+  }
+  .progress-circle.filled {
+    background-color: #ff0000;
+  }
+  .hover-effect:hover {
+    background-color: #2c3e50;
+  }
+  .btn-animate:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease-in-out;
+  }
+  .note-card {
+    background: #f8f8f8;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .note-card img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+</style>
+</head>
+<body class="bg-gray-100">
+<!-- Navigation -->
+<nav class="bg-green-800 p-4 fixed w-full z-10">
+  <div class="container mx-auto flex justify-between items-center">
+    <div class="text-white text-2xl font-bold">My Portfolio</div>
+    <ul class="flex space-x-4">
+      <li><a href="#hero" class="text-white">Home</a></li>
+      <li><a href="#about" class="text-white">About</a></li>
+      <li><a href="#portfolio" class="text-white">Portfolio</a></li>
+      <li><a href="#resume" class="text-white">Resume</a></li>
+      <li><a href="#contact" class="text-white">Contact</a></li>
+      <li><a href="#blog" class="text-white">Blog</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="hero" class="text-center py-20 bg-green-900 text-white">
+  <div class="container mx-auto">
+    <img src="/images/me.jpeg" alt="Profile Picture" class="w-32 h-32 mx-auto rounded-full mb-4">
+    <h1 class="text-4xl font-bold">Alirun Khamidov</h1>
+    <p class="mt-4 text-lg">A passionate developer with expertise in web development.</p>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-20 bg-white">
+  <div class="container mx-auto text-center">
+    <h2 class="text-2xl font-bold mb-6">About Me</h2>
+    <p class="text-gray-700">My name is Alirun Khamidov, I am 18 years old, and I study at University Academy 92. Originally from Uzbekistan, I came to England to pursue a bachelor's degree in cybersecurity. I have a solid background in programming and design. I am proficient in several programming languages and tools for writing complex code and can create designs for websites, applications, companies, and more. More information can be found in my resume, which you can download below 👇.</p>
+    <br>
+    <a href="/download/Resume.pdf" download class="bg-gray-800 text-white px-6 py-2 rounded hover-effect btn-animate">Download Resume</a>
+  </div>
+</section>
+
+<!-- Portfolio Section -->
+<section id="portfolio" class="py-20 bg-red-100">
+  <div class="container mx-auto text-center">
+    <h2 class="text-2xl font-bold mb-6">My Projects</h2>
+    <div class="flex justify-center mb-6">
+      <button class="filter-btn mx-2 px-4 py-2 bg-red-700 text-white rounded hover-effect btn-animate">All</button>
+      <button class="filter-btn mx-2 px-4 py-2 bg-red-700 text-white rounded hover-effect btn-animate">Web Development</button>
+      <button class="filter-btn mx-2 px-4 py-2 bg-red-700 text-white rounded hover-effect btn-animate">Design</button>
+    </div>    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+<!-- Project Card 1 -->
+<div class="project-card bg-white p-6 rounded-lg shadow-lg" data-category="Web Development">
+  <img src="/images/portfolio-web.png" alt="Project Image" class="w-full h-48 mb-4 rounded-lg">
+  <h3 class="text-lg font-bold mb-2">Portfolio Website</h3>
+  <p class="text-black-700 mb-4">A web development project using HTML, CSS, and JavaScript.</p>
+  <button class="bg-red-800 text-white px-4 py-2 rounded view-details-btn hover-effect btn-animate">View Details</button>
+  <div class="details hidden">
+    <h4 class="text-lg font-bold mb-2">Proficiency</h4>
+    <div class="language">
+      <span>HTML</span>
+      <div class="progress-bar" data-progress="80">
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <span class="ml-2">80%</span>
+      </div>
+    </div>
+    <div class="language">
+      <span>CSS</span>
+      <div class="progress-bar" data-progress="70">
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <span class="ml-2">70%</span>
+      </div>
+    </div>
+    <div class="language">
+      <span>JavaScript</span>
+      <div class="progress-bar" data-progress="90">
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <span class="ml-2">90%</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Project Card 2 -->
+<div class="project-card bg-white p-6 rounded-lg shadow-lg" data-category="Web Development">
+  <img src="/images/school-web.png" alt="Project Image" class="w-full h-48 mb-4 rounded-lg">
+  <h3 class="text-lg font-bold mb-2">School Website</h3>
+  <p class="text-black-700 mb-4">A web development project using HTML, CSS, JavaScript, PHP, MySQL</p>
+  <button class="bg-red-800 text-white px-4 py-2 rounded view-details-btn hover-effect btn-animate">View Details</button>
+  <div class="details hidden">
+    <h4 class="text-lg font-bold mb-2">Proficiency</h4>
+    <div class="language">
+      <span>HTML</span>
+      <div class="progress-bar" data-progress="85">
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <span class="ml-2">85%</span>
+      </div>
+    </div>
+    <div class="language">
+      <span>CSS</span>
+      <div class="progress-bar" data-progress="75">
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <span class="ml-2">75%</span>
+      </div>
+    </div>
+    <div class="language">
+      <span>JavaScript</span>
+      <div class="progress-bar" data-progress="90">
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <span class="ml-2">90%</span>
+      </div>
+    </div>
+    <div class="language">
+      <span>PHP</span>
+      <div class="progress-bar" data-progress="80">
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <span class="ml-2">80%</span>
+      </div>
+    </div>
+    <div class="language">
+      <span>MySQL</span>
+      <div class="progress-bar" data-progress="70">
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <span class="ml-2">70%</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Project Card 3 -->
+<div class="project-card bg-white p-6 rounded-lg shadow-lg" data-category="Design">
+  <img src="/images/design.jpg" alt="Project Image" class="w-full h-48 mb-4 rounded-lg">
+  <h3 class="text-lg font-bold mb-2">Design</h3>
+  <p class="text-black-700 mb-4">Creating complex designs for different types of tasks.</p>
+  <button class="bg-red-800 text-white px-4 py-2 rounded view-details-btn hover-effect btn-animate">View Details</button>
+  <div class="details hidden">
+    <h4 class="text-lg font-bold mb-2">Proficiency</h4>
+    <div class="language">
+      <span>Photoshop</span>
+      <div class="progress-bar" data-progress="85">
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <span class="ml-2">85%</span>
+      </div>
+    </div>
+    <div class="language">
+      <span>Illustrator</span>
+      <div class="progress-bar" data-progress="75">
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <span class="ml-2">75%</span>
+      </div>
+    </div>
+    <div class="language">
+      <span>Sketch</span>
+      <div class="progress-bar" data-progress="90">
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <div class="progress-circle"></div>
+        <span class="ml-2">90%</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Resume Section -->
+<section id="resume" class="py-20 bg-white text-center">
+  <div class="container mx-auto">
+    <h2 class="text-2xl font-bold mb-6">Resume</h2>
+    <a href="/download/Resume.pdf" download class="bg-gray-800 text-white px-6 py-2 rounded hover-effect btn-animate">Download Resume</a>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-blue-100">
+<div class="container mx-auto text-center">
+  <h2 class="text-2xl font-bold mb-6">Contact Me</h2>
+  <form id="contactForm" action="#" method="POST" class="max-w-lg mx-auto">
+    <div class="mb-4">
+      <label for="name" class="block mb-2">Your Name</label>
+      <input type="text" id="name" name="name" class="w-full px-4 py-2 rounded-lg border">
+    </div>
+    <div class="mb-4">
+      <label for="email" class="block mb-2">Your Email</label>
+      <input type="email" id="email" name="email" class="w-full px-4 py-2 rounded-lg border">
+    </div>
+    <div class="mb-4">
+      <label for="subject" class="block mb-2">Subject</label>
+      <input type="text" id="subject" name="subject" class="w-full px-4 py-2 rounded-lg border">
+    </div>
+    <div class="mb-4">
+      <label for="message" class="block mb-2">Your Message</label>
+      <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 rounded-lg border"></textarea>
+      <div id="message-count" class="text-right text-gray-600">0/500</div>
+    </div>
+    <div>
+      <button type="submit" class="bg-gray-800 text-white px-6 py-2 rounded-lg hover-effect btn-animate">Send Message</button>
+    </div>
+  </form>
+</div>
+</section>  
+
+<!-- Blog Section -->
+<section id="blog" class="py-20 bg-white">
+<div class="container mx-auto text-center">
+  <h2 class="text-2xl font-bold mb-6">Blog</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="md:col-span-2">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/KLNx5Ofoai8?si=Nt3gS9VtlBZikwTa" title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+    </div>
+    <div class="md:col-span-1">
+      <form id="noteForm" class="mb-6">
+        <textarea id="noteText" rows="3" class="w-full p-2 rounded-lg border" placeholder="Write your note here..."></textarea>
+        <div class="flex items-center mt-2">
+          <input type="file" id="noteImage" class="hidden" accept="image/*">
+          <label for="noteImage" class="cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hover:text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 01-2.828 0L3 10.828M10 5H4a2 2 0 00-2 2v12a2
+              2 0 002 2h16a2 2 0 002-2v-6M21 10V4a2 2 0 00-2-2h-6"/>
+            </svg>
+          </label>
+          <button type="submit" class="bg-gray-800 text-white px-4 py-2 rounded-lg hover-effect btn-animate ml-2">Add Note</button>
+        </div>
+      </form>
+      <div id="notesContainer"></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-green-800 text-white text-center py-4">
+<div class="container mx-auto">
+  <p>&copy; 2024 Alirun Khamidov</p>
+  <div class="flex justify-center mt-4">
+    <a href="https://instagram.com/alirun_s/" class="mx-2 text-white hover-effect btn-animate" target="_blank">Instagram</a>
+    <a href="https://github.com/Alirun1/" class="mx-2 text-white hover-effect btn-animate" target="_blank">GitHub</a>
+    <a href="https://t.me/tapovich" class="mx-2 text-white hover-effect btn-animate" target="_blank">Telegram</a>
+  </div>
+</div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
+
+filterButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const category = button.textContent.trim();
+    projectCards.forEach(card => {
+      if (category === "All" || card.dataset.category.includes(category)) {
+        card.classList.remove("hidden");
+      } else {
+        card.classList.add("hidden");
+      }
+    });
+  });
+});
+
+// Intersection Observer for animations
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("fade-in");
+    }
+  });
+});
+
+document.querySelectorAll(".fade-in-on-scroll").forEach(element => {
+  observer.observe(element);
+});
+
+const form = document.getElementById("contactForm");
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const messageInput = document.getElementById("message");
+const messageCount = document.getElementById("message-count");
+
+messageInput.addEventListener("input", () => {
+  const messageLength = messageInput.value.length;
+  messageCount.textContent = `${messageLength}/500`;
+  if (messageLength > 500) {
+    messageInput.classList.add("border-red-500");
+  } else {
+    messageInput.classList.remove("border-red-500");
+  }
+});
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  let isValid = true;
+
+  // Validate name
+  const nameValue = nameInput.value.trim();
+  if (nameValue === "") {
+    nameInput.classList.add("border-red-500");
+    alert("The Name field is required.");
+    isValid = false;
+  } else if (/\d/.test(nameValue)) {
+    nameInput.classList.add("border-red-500");
+    alert("The Name field is incorrect. It should not contain numbers.");
+    isValid = false;
+  } else {
+    nameInput.classList.remove("border-red-500");
+  }
+
+  // Validate email
+  const emailValue = emailInput.value.trim();
+  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  if (emailValue === "") {
+    emailInput.classList.add("border-red-500");
+    alert("The Email field is required.");
+    isValid = false;
+  } else if (!emailPattern.test(emailValue)) {
+    emailInput.classList.add("border-red-500");
+    alert("Please enter a valid email address.");
+    isValid = false;
+  } else {
+    emailInput.classList.remove("border-red-500");
+  }
+
+  // Validate message length and presence
+  const messageValue = messageInput.value.trim();
+  if (messageValue === "") {
+    messageInput.classList.add("border-red-500");
+    alert("The Message field is required.");
+    isValid = false;
+  } else if (messageValue.length > 500) {
+    messageInput.classList.add("border-red-500");
+    alert("The message must be no more than 500 characters.");
+    isValid = false;
+  } else {
+    messageInput.classList.remove("border-red-500");
+  }
+
+  // If all validations pass, clear the form inputs
+  if (isValid) {
+    alert("Form submitted successfully!");
+    form.reset();
+    messageCount.textContent = "0/500";
+    nameInput.classList.remove("border-red-500");
+    emailInput.classList.remove("border-red-500");
+    messageInput.classList.remove("border-red-500");
+  }
+});
+
+const viewDetailsButtons = document.querySelectorAll(".view-details-btn");
+
+// Toggle visibility of details section
+viewDetailsButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const details = button.nextElementSibling;
+    details.classList.toggle("hidden");
+    if (!details.classList.contains("hidden")) {
+      const progressBars = details.querySelectorAll(".progress-bar");
+      progressBars.forEach(bar => {
+        const progress = bar.dataset.progress;
+        const circles = bar.querySelectorAll(".progress-circle");
+        circles.forEach((circle, index) => {
+          setTimeout(() => {
+            if (index < progress / 10) {
+              circle.classList.add("filled");
+            }
+          }, index * 100);
+        });
+      });
+    } else {
+      const progressCircles = details.querySelectorAll(".progress-circle");
+      progressCircles.forEach(circle => {
+        circle.classList.remove("filled");
+      });
+    }
+  });
+});
+
+const noteForm = document.getElementById("noteForm");
+const noteText = document.getElementById("noteText");
+const noteImage = document.getElementById("noteImage");
+const notesContainer = document.getElementById("notesContainer");
+
+noteForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const text = noteText.value.trim();
+  const file = noteImage.files[0];
+
+  if (text || file) {
+    const noteCard = document.createElement("div");
+    noteCard.classList.add("note-card");
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = document.createElement("img");
+        img.src = e.target.result;
+        noteCard.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    }
+
+    if (text) {
+      const p = document.createElement("p");
+      p.textContent = text;
+      noteCard.appendChild(p);
+    }
+
+    notesContainer.appendChild(noteCard);
+
+    noteText.value = "";
+    noteImage.value = "";
+  }
+});
+});
+</script>
+
+</body>
+</html>
